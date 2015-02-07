@@ -1,19 +1,29 @@
 .header {
 	border: 1px solid #000000;
+	height: 125px;
 }
 
 .filter{
 	border: 1px solid #000000;
+	padding: 5px;
 }
 
 .results{
 	border: 1px solid #000000;
+	padding: 5px;
 }
 
 .username{
-	border: 1px solid #000000;
+	padding: 25px;
+	padding-top: 50px;
 }
 
 .status {
-	border: 1px solid #000000;
+	padding: 25px;
+	text-align: right;
+	padding-top: 50px;
+}
+
+.resultsWrapper {
+	text-align: center;	
 }

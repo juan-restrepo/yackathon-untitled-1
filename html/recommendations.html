@@ -3,15 +3,44 @@
 		<!-- user information --> 
 		username here
 	</div>
-	<div class="col-md-6 status">
+	<div class="col-md-6 status pull-right">
 		yelp status here
 	</div>
 </div>
 <div class="row filter">
 	<!-- user filter option -->
-	filter select here
+	<label for="selectFilter"> filter by: </label>
+	<select id="selectFilter">
+		<option value="1">category1</option>
+		<option value="1">category2</option>
+		<option value="1">category3</option>
+		<option value="1">category4</option>
+		<option value="1">category5</option>
+	</select>
 </div>
 <div class="row results">
 	<!-- for loop  -->
-	results go here
+	<div class="col-md-12 resultsWrapper">
+		<div class="row">
+			<div class="col-md-4">
+				<input type="button" class="recommendationbtn" value="recommendation 1">
+			</div>
+			<div class="col-md-4">
+				<input type="button" class="recommendationbtn" value="recommendation 2">
+			</div>
+			<div class="col-md-4">
+				<input type="button"  class="recommendationbtn" value="recommendation 3"> 
+			</div>
+			<script type="text/javascript">
+				// loads recommendations inside the index's body
+			   $(function(){
+				   $(".recommendationbtn").bind("click", function(){
+					   $("#content").load("recommendation.html");
+				   });
+				     
+				});
+			</script>
+		</div>
+	</div>
+	<!-- end loop -->
 </div>
