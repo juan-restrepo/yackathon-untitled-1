@@ -97,3 +97,6 @@ __tip__
     'likes': (count),
 }
 ```
+
+##GOOGLE API Key AIzaSyABDneACaOeGDOpUG6ZKPzL_Tz4RZmVXcQ
+
