@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>yelp-untitled</title>
+	
+		<!-- jquery -->
+	    <script src="../resources/assets/js/jquery-2.1.3.js"></script>
+	    
+	    <!-- Bootstrap -->
+	    <link href="../bootstrap/bootstrap-3.3.2-dist/css/bootstrap.min.css" rel="stylesheet">
+	    <script src="../bootstrap/bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    
+	    <!-- styles -->
+	    <link href="../resources/assets/css/index.css" rel="stylesheet">
+	    <link href="../resources/assets/css/recommendations.css" rel="stylesheet">
+	  	<link href="../resources/assets/css/users.css" rel="stylesheet">
+	  	
+	</head>
+	<body>
+		<!-- include content page here -->
+		<div class="banner">
+			<h2>team: Untitled</h2>
+		</div>
+		<div class="container" id="content">
+		</div>
+		<script type="text/javascript">
+			// loads users inside the index's body
+		   $(function(){
+			      $("#content").load("users.html"); 
+			});
+		</script>
+	</body>
+</html>

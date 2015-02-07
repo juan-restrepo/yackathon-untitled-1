@@ -1,0 +1,23 @@
+body{
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+	line-height: 1.5;
+	color: #333;
+	background-color:rgb(245,245,241);
+}
+ 
+#content{
+	background-color:rgb(255,255,255);
+	height: 100%;
+}
+
+.banner{
+	height: 50px;
+	background-color:rgb(200,46,9);
+	color: #FFF;
+}
+
+.banner h2 {
+	margin: 0 !important;
+	padding-top: 5px !important;
+}
