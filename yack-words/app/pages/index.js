@@ -1,16 +1,32 @@
 'use strict';
 var React  = require('react');
 
-var Geo    = require('../lib/geo');
-var Layout = require('../components/layout');
+var Geo       = require('../lib/geo');
+var Actions   = require('../actions');
+var Layout    = require('../components/layout');
+var WordStore = require('../stores/word');
 
 var IndexPage = React.createClass({
   getInitialState: function() {
-    return {results: null, activeSearch: false};
+    return {results: false, activeSearch: false};
   },
 
   componentDidMount: function() {
     this.refs.search.getDOMNode().focus();
+
+    this.unsubscribe = WordStore.listen(function(type, err, results) {
+      if (type !== 'fetch') return;
+      if (err) {
+        console.log(err);
+        this.setState({results: false});
+      } else {
+        this.setState({results: results});
+      }
+    }, this);
+  },
+
+  componentWillUnmount: function() {
+    this.unsubscribe();
   },
 
   handleSearchKey: function(e) {
@@ -33,29 +49,38 @@ var IndexPage = React.createClass({
         this.setState({activeSearch: true}, function() {
           Geo.initialize(this.refs.previewMap.getDOMNode());
           Geo.centerAndAddMarker(loc);
-          this.startWordSearch();
+          this.startWordSearch(loc.lat(), loc.lng());
         });
       }
     }.bind(this));
   },
 
-  startWordSearch: function() {
-  
+  startWordSearch: function(lat, lng) {
+    this.setState({results: null});
+    Actions.fetchWords(lat, lng);
   },
 
   render: function() {
     var results;
 
-    if (this.state.results === null) {
+    if (this.state.results === false) {
       results = <p className="centered-message">
         No results came in yet, go, you can do it, make a search :)
       </p>;
-    } else if (this.state.results.length === 0) {
+    } else if (this.state.results === null) {
       results = <p className="centered-message">
         Fetching all kinds of nice words (and few bad ones) ...
       </p>;
+    } else if (this.state.results.length === 0) {
+      results = <p className="centered-message">
+        Oh, that is sad. There are no results for this location :(
+      </p>;
     } else {
-      results = null;
+      results = [];
+      for (var k in this.state.results) {
+        var v = this.state.results[k];
+        results.push(<div>{v.Key} : {v.Value}</div>);
+      }
     }
 
     return (
