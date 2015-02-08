@@ -8,14 +8,14 @@ var Layout = React.createClass({
         <header className="header">
           <section className="header-top">
             <div className="header-top-logo">
-              <img src="/img/logo.png" />
+              <h1>YackWords</h1>
             </div>
             <nav className="header-top-navigation">
             </nav>
           </section>
           <nav className="header-navigation">
             <div className="header-navigation-title">
-              Marks &rarr;
+              YackWords &rarr;
             </div>
             <div className="header-navigation-links">
               <a href="#/">Home</a>
@@ -26,7 +26,7 @@ var Layout = React.createClass({
           {this.props.children}
         </section>
         <footer className="footer">
-          Yack Words [By team Untitled], MIT Licensed,
+          Yack Words (By Team Untitled), MIT Licensed,
           [<a href="https://github.com/kiasaki/yackathon-untitled">GitHub</a>]
         </footer>
       </div>
