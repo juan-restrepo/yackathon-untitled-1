@@ -1,0 +1,25 @@
+// Colors
+light-gray = #efefef
+normal-box-shadow = 0 2px 5px rgba(0,0,0,0.26)
+
+@import "mixins"
+@import "meta"
+
+section.content
+  container()
+  display flex
+  margin-bottom 30px
+  padding 30px
+  background #fff
+  border-radius 2px
+  box-shadow normal-box-shadow
+  h1
+    margin 0 0 15px
+    font-weight 300
+    font-size 32px
+    .subtitle
+      color darken(light-gray, 40%)
+      font-size 80%
+      display inline-block
+      margin-left 15px
+

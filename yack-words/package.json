@@ -1,0 +1,36 @@
+{
+  "name": "yack-words",
+  "version": "1.0.0",
+  "description": "Yackathon words thingy",
+  "main": "server.js",
+  "scripts": {
+    "start": "node ./server.js",
+    "test": "./node_modules/jest/bin/jest.js",
+    "deploy": "./node_modules/gulp/bin/gulp.js build",
+    "dev": "./node_modules/gulp/bin/gulp.js dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kiasaki/yackathon-untitled.git"
+  },
+  "author": "Frederic Gingras",
+  "license": "MIT",
+  "homepage": "https://github.com/kiasaki/yackathon-untitled",
+  "dependencies": {
+    "browserify": "^8.1.1",
+    "express": "^5.0.0-alpha.1",
+    "gulp": "^3.8.10",
+    "gulp-eslint": "^0.2.2",
+    "gulp-nodemon": "^1.0.5",
+    "gulp-react": "^2.0.0",
+    "gulp-stylus": "^2.0.0",
+    "gulp-uglify": "^1.1.0",
+    "moment": "^2.9.0",
+    "ramda": "^0.9.1",
+    "react": "^0.13.0-beta.1",
+    "reactify": "^1.0.0",
+    "superagent": "^0.21.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.0.0"
+  }
+}
