@@ -15,7 +15,7 @@ var Layout = React.createClass({
           </section>
           <nav className="header-navigation">
             <div className="header-navigation-title">
-              YackWords &rarr;
+              A Yelp hackathon project &rarr;
             </div>
             <div className="header-navigation-links">
               <a href="#/">Home</a>

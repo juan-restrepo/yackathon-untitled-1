@@ -10,9 +10,11 @@ normal-box-shadow = 0 2px 5px rgba(0,0,0,0.26)
 @import "header"
 @import "footer"
 
+.flex
+  display flex
+
 section.content
   container()
-  display flex
   margin-bottom 30px
   padding 30px
   background #fff
@@ -28,3 +30,45 @@ section.content
       display inline-block
       margin-left 15px
 
+  p.search-help, section.search-box
+    flex 1 0
+    border-radius 2px
+    border 1px solid #ddd
+    background #ededed
+    padding 30px
+    margin 0 0 30px
+    font-size 16px
+
+  p.search-help
+    margin-left 15px
+
+  section.search-box
+    margin-right 15px
+    input
+      width 100%
+      background #fff
+      border 1px solid #ddd
+      border-radius 4px
+      padding 6px 12px
+      line-height 22px
+      font-size 18px
+      margin-bottom 30px
+    div.preview-box
+      width 100%
+      color #888
+      border 2px solid #aaa
+      border-radius 4px
+      height 130px
+      line-height 130px
+      font-size 18px
+      text-align center
+      .google-map
+        width 100%
+        height 100%
+
+.centered-message
+  text-align center
+  font-style italic
+  font-size 20px
+  padding 30px
+  margin 0
